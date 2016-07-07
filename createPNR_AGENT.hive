@@ -1,0 +1,6 @@
+CREATE EXTERNAL TABLE TEST.PNR_AGENT(CompanyName string,HomeLocation string,IataNumber bigint,IsoCountryCode string,Lniata string,StationLocation string,StationLocationNumber bigint,TicketingProvider string,WorkLocation string,duty bigint,sine string)
+ROW FORMAT SERDE 'parquet.hive.serde.ParquetHiveSerDe'
+STORED AS
+INPUTFORMAT "parquet.hive.DeprecatedParquetInputFormat"
+OUTPUTFORMAT "parquet.hive.DeprecatedParquetOutputFormat"
+LOCATION '/user/sg952621/PNR.parquet';
